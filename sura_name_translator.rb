@@ -11,7 +11,7 @@ SURA_NAME_AR = <<-END
 سُوۡرَةُ یُونس
 سُوۡرَةُ هُود
 سُوۡرَةُ یُوسُف
-سُوۡرَةُ یُوسُف
+سُوۡرَةُ الرّعد
 سُوۡرَةُ إبراهیم
 سُوۡرَةُ الحِجر
 سُوۡرَةُ النّحل
@@ -20,7 +20,7 @@ SURA_NAME_AR = <<-END
 سُوۡرَةُ مَریَم
 سُوۡرَةُ طٰه
 سُوۡرَةُ الاٴنبیَاء
-سُوۡرَةُ الاٴنبیَاء
+سُوۡرَةُ الحَجّ
 سُوۡرَةُ المؤمنون
 سُوۡرَةُ النُّور
 سُوۡرَةُ الفُرقان
@@ -116,7 +116,129 @@ SURA_NAME_AR = <<-END
 END
 .split("\n")
 
+KEY_NAMES =<<-END
+fatiha
+baqara
+aleimran
+nisa
+mayeda
+anam
+araf
+anfal
+tawba
+yunus
+hud
+yusuf
+rad
+ibrahim
+hijr
+nahl
+isra
+kahf
+maryam
+taha
+anbiya
+hajj
+muminoon
+noor
+furqan
+shuara
+naml
+qasas
+ankabut
+room
+luqman
+sajdah
+ahjab
+saba
+fatir
+yaseen
+saffat
+sad
+zumar
+gafir
+fussilat
+shoora
+zukruf
+dukan
+jatiya
+ahqaf
+muhammad
+fath
+huzurat
+qaf
+zariyat
+toor
+nazm
+qamar
+arrahman
+waqiyah
+hadid
+mujadalah
+hashr
+mumtahina
+saff
+zumuah
+munafiqun
+tagabun
+talaq
+tahreem
+mulk
+qalam
+haqqah
+maarij
+nooh
+jinn
+mujjammil
+muddassir
+qiyamah
+insan
+mursalat
+naba
+naziat
+abasa
+takweer
+infitar
+mutaffifeen
+inshiqaq
+burooj
+tariq
+ala
+gashiya
+fazr
+balad
+shams
+lail
+duha
+inshirah
+teen
+alaq
+qadr
+bayyina
+zalzalah
+adiyat
+qariyah
+takasur
+asr
+humazah
+feel
+quraish
+mauoon
+kawsar
+kafiroon
+nasr
+masad
+ikhlas
+falaq
+nas
+END
+.split("\n")
 
 def no_to_sura_name(sura_no)
     SURA_NAME_AR[sura_no]
 end
+
+def key_to_sura_name(key)
+    SURA_NAME_AR[KEY_NAMES.index(key)]
+end
+

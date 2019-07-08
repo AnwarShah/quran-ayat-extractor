@@ -1,7 +1,7 @@
 # ADD surah index. Name to number and number to ayat hash
 require 'sqlite3'
 require_relative './no-to-ayat-symbol.rb'
-require_relative './no-to-sura-name.rb'
+require_relative './sura_name_translator.rb'
 
 begin
     db = SQLite3::Database.open "quran_indo.db"
