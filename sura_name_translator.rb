@@ -242,3 +242,7 @@ def key_to_sura_name(key)
     SURA_NAME_AR[KEY_NAMES.index(key)]
 end
 
+# Returns sura index (base from 0) from defined key (sura name)
+def key_to_no(key)
+    KEY_NAMES.index(key)
+end
