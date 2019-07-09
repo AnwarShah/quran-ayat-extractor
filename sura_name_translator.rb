@@ -149,7 +149,7 @@ ankabut
 room
 luqman
 sajdah
-ahjab
+ahzab
 saba
 fatir
 yaseen
