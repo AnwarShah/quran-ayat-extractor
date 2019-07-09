@@ -17,8 +17,8 @@ begin
             rs = stm.execute key_to_no(sura)+1, ayat # Our sura 0 is db's sura 1
 
             rs.each do |row|
-                f.write row.join "\s"
-                f.puts(ayat_symbol_for(ayat))
+                f.write row.join "\s "
+                f.puts(ayat_symbol_for(ayat) + "  ")
             end
         end
     end
