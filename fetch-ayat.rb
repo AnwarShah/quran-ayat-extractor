@@ -14,7 +14,7 @@ begin
     sura_ayat.each do |sura, ayats|
         f.puts key_to_sura_name(sura)
         ayats.each do |ayat|
-            rs = stm.execute key_to_no(sura), ayat
+            rs = stm.execute key_to_no(sura)+1, ayat # Our sura 0 is db's sura 1
 
             rs.each do |row|
                 f.write row.join "\s"
