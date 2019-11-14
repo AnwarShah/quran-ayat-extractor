@@ -12,9 +12,13 @@ begin
     stm = db.prepare "SELECT Text FROM VERSES WHERE sura = :sura AND ayah = :ayah"
 
     sura_ayat.each do |sura, ayats|
-        f.puts key_to_sura_name(sura)
+        sura_name = key_to_sura_name(sura)
+        sura_no = key_to_sura_no(sura)
+
+        
+        f.puts sura_name
         ayats.each do |ayat|
-            rs = stm.execute key_to_no(sura)+1, ayat # Our sura 0 is db's sura 1
+            rs = stm.execute sura_no+1, ayat # Our sura 0 is db's sura 1
 
             rs.each do |row|
                 f.write row.join "\s "
