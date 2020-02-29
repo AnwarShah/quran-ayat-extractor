@@ -160,7 +160,7 @@ gafir
 fussilat
 shoora
 zukruf
-dukan
+dukhan
 jatiya
 ahqaf
 muhammad
