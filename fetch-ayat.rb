@@ -3,7 +3,7 @@ require 'sqlite3'
 require_relative './no-to-ayat-symbol.rb'
 require_relative './sura_name_translator.rb'
 
-begin 
+begin
     db = SQLite3::Database.open "quran_indo.db"
     $stm = db.prepare "SELECT Text FROM VERSES WHERE sura = :sura AND ayah = :ayah"
     $f = File.open("ayat.txt", 'w:UTF-8')
@@ -13,7 +13,7 @@ rescue SQLite3::Exception => e
 end
 
 def write_ayat(sura_idx, ayat_no)
-    rs = $stm.execute key_to_no(sura_idx)+1, ayat_no # Our sura 0 is db's sura 1
+    rs = $stm.execute key_to_sura_no(sura_idx)+1, ayat_no # Our sura 0 is db's sura 1
 
     rs.each do |row|
         $f.write row.join "\s "
@@ -42,7 +42,7 @@ begin
                     write_ayat(sura, ayat)
                 end
             else
-            # if a single ayat  
+            # if a single ayat
                 ayat = ayat_no_str.to_i
                 write_ayat(sura, ayat)
             end
